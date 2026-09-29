@@ -21,7 +21,7 @@ const apiPlugin = () => ({
             
             const { error } = await resend.emails.send({
               from: "Portfolio Contact <onboarding@resend.dev>",
-              to: ["taimoort137@gmail.com"],
+              to: ["maryamzimal24@gmail.com"],
               reply_to: email,
               subject: `[Portfolio] ${subject}`,
               html: `
