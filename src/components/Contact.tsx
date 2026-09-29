@@ -1,4 +1,40 @@
+import { useState } from 'react';
+
 export function Contact() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
+      }
+    } catch (err) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="section-div">
       <div className="wrap">
@@ -43,15 +79,18 @@ export function Contact() {
             </div>
           </div>
           <div className="reveal">
-            <form id="contactForm" onSubmit={(e) => e.preventDefault()}>
+            <form id="contactForm" onSubmit={handleSubmit}>
               <div className="form-row">
-                <div className="form-field"><label htmlFor="name">Name</label><input id="name" type="text" placeholder="Your name" /></div>
-                <div className="form-field"><label htmlFor="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
+                <div className="form-field"><label htmlFor="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+                <div className="form-field"><label htmlFor="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required /></div>
               </div>
-              <div className="form-field"><label htmlFor="subject">Subject</label><input id="subject" type="text" placeholder="What's this about?" /></div>
-              <div className="form-field"><label htmlFor="message">Message</label><textarea id="message" rows={5} placeholder="Tell me about the opportunity or project..."></textarea></div>
-              <button type="submit" className="btn btn-accent" style={{ width: '100%', justifyContent: 'center' }}>Send Message</button>
-              <p className="note">Design preview only — this form isn't wired to an email backend yet.</p>
+              <div className="form-field"><label htmlFor="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="What's this about?" required /></div>
+              <div className="form-field"><label htmlFor="message">Message</label><textarea id="message" name="message" rows={5} placeholder="Tell me about the opportunity or project..." required></textarea></div>
+              <button type="submit" className="btn btn-accent" style={{ width: '100%', justifyContent: 'center' }} disabled={status === 'loading'}>
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
+              </button>
+              {status === 'success' && <p className="note" style={{ color: '#4caf50' }}>Message sent successfully!</p>}
+              {status === 'error' && <p className="note" style={{ color: '#f44336' }}>Failed to send message. Please try again.</p>}
             </form>
           </div>
         </div>

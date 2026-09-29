@@ -2,8 +2,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 
 // Environment variables (never expose in frontend code)
-const resend = new Resend(process.env.RESEND_API_KEY);
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "taimoorjham@gmail.com";
+const resend = new Resend("re_BRZ8WUtU_2LeehcDAyhYdwHfLW2wDctwr");
+const CONTACT_EMAIL = "taimoort137@gmail.com";
 
 interface ContactBody {
   name?: string;

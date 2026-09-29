@@ -7,12 +7,11 @@ export function Hero() {
         <div className="hero-grid">
           <div>
             <span className="eyebrow"><span className="dot"></span>SOFTWARE ENGINEER • MERN STACK DEVELOPER</span>
-            <h1 className="hero-h">Building modern,<br/>scalable <span className="accent-text">web experiences.</span></h1>
-            <p className="hero-sub">I'm Muhammad Taimoor Jham, a MERN Stack Developer with a strong foundation in building scalable, efficient and user-friendly web applications — currently shipping full-stack products at HawkLogix, Lahore.</p>
+            <h1 className="hero-h">Hi, I'm Muhammad<br/><span className="accent-text">Taimoor Jham.</span></h1>
+            <p className="hero-sub">A MERN Stack Developer with a strong foundation in building scalable, efficient and user-friendly web applications — currently shipping full-stack products at HawkLogix, Lahore.</p>
             <div className="hero-ctas">
-              <a href="#projects" className="btn btn-accent">View My Work</a>
+              <a href="/Resume.pdf" download="Muhammad_Taimoor_Jham_Resume.pdf" className="btn btn-accent">Download Resume</a>
               <a href="#contact" className="btn btn-ghost">Let's Connect</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); alert('Resume download will be wired up later.'); }} className="btn btn-ghost">Download Resume</a>
             </div>
           </div>
           <div className="hero-visual">

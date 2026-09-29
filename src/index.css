@@ -2,10 +2,10 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #090B0E; --bg-elev: #0F1318; --bg-subtle: #141920;
-  --fg: #F5F7F8; --fg-muted: #98A2AD; --fg-subtle: #5C6670;
-  --accent: #2FE0B0; --accent-2: #22B8E8; --accent-fg: #04140F;
-  --border: rgba(255,255,255,0.07); --border-strong: rgba(255,255,255,0.15);
+  --bg: #020617; --bg-elev: #0F172A; --bg-subtle: #1E293B;
+  --fg: #F8FAFC; --fg-muted: #94A3B8; --fg-subtle: #64748B;
+  --accent: #38BDF8; --accent-2: #818CF8; --accent-fg: #020617;
+  --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.15);
   --ease: cubic-bezier(.4,0,.2,1);
   padding-top: env(safe-area-inset-top,0px);
   padding-bottom: env(safe-area-inset-bottom,0px);
