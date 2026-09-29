@@ -5,7 +5,7 @@ export function About() {
         <div className="wrap">
           <div className="stats-row">
             <div className="stat reveal"><span className="num">2</span><span className="lbl">Professional Roles</span></div>
-            <div className="stat reveal"><span className="num">2023</span><span className="lbl">CS Graduate, GCU</span></div>
+            <div className="stat reveal"><span className="num">2023</span><span className="lbl">CS Graduate, GCUF</span></div>
             <div className="stat reveal"><span className="num">MERN</span><span className="lbl">Primary Stack</span></div>
             <div className="stat reveal"><span className="num">7+</span><span className="lbl">Applications Built</span></div>
           </div>

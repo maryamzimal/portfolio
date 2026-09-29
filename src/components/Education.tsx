@@ -14,10 +14,17 @@ export function Education() {
           </div>
           <div>
             <h3>BS Computer Science</h3>
-            <div className="meta mono">GCU Faisalabad · Aug 2019 — Aug 2023</div>
+            <div className="meta mono">GCUF Faisalabad · Aug 2019 — Aug 2023</div>
+            <div className="meta mono" style={{ marginTop: '6px', color: 'var(--accent)' }}>CGPA: 3.49</div>
+            <div style={{ marginTop: '14px' }}>
+              <div style={{ fontSize: '13px', color: 'var(--fg-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, marginBottom: '8px' }}>Final Year Project</div>
+              <div style={{ fontSize: '14.5px', fontWeight: 700, marginBottom: '4px' }}>Property Dealing Website</div>
+              <div style={{ fontSize: '13.5px', color: 'var(--fg-muted)' }}>A full-stack real estate platform enabling users to buy, sell, and rent properties — featuring property listings, search filters, agent profiles, and inquiry management.</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

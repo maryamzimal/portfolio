@@ -5,7 +5,7 @@ import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
-import { Education } from "./components/Education";
+// import { Education } from "./components/Education";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
@@ -24,7 +24,7 @@ function App() {
     revealEls.forEach(el => io.observe(el));
 
     // Active nav link on scroll
-    const sections = ['about','experience','skills','projects','education','contact'].map(id => document.getElementById(id));
+    const sections = ['about', 'experience', 'skills', 'projects', 'education', 'contact'].map(id => document.getElementById(id));
     const navObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const link = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
@@ -44,14 +44,14 @@ function App() {
       const timelineEl = document.getElementById('timeline');
       const timelineFill = document.getElementById('timelineFill');
       if (!timelineEl || !timelineFill) return;
-      
+
       const rect = timelineEl.getBoundingClientRect();
       const vh = window.innerHeight;
       const total = rect.height;
       const visible = Math.min(Math.max(vh * 0.75 - rect.top, 0), total);
       timelineFill.style.height = visible + 'px';
     };
-    
+
     window.addEventListener('scroll', updateTimeline);
     window.addEventListener('resize', updateTimeline);
     // Initial call
@@ -73,7 +73,7 @@ function App() {
       <Experience />
       <Skills />
       <Projects />
-      <Education />
+      {/* <Education /> */}
       <Contact />
       <Footer />
     </>
